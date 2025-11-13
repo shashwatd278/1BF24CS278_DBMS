@@ -67,4 +67,4 @@ SELECT * FROM emp WHERE emp.empno IN (SELECT mgr_no FROM emp) AND emp.sal > (SEL
 select e.empno from emp e, assigned_to a, project p where e.empno=a.empno and a.pno=p.pno and p.ploc in ("Bengaluru","Hyderabad","Mysuru");
 select m.ename, count(*) from emp e,emp m where e.mgr_no = m.empno group by m.ename having count(*) =(select max(mycount) from (select COUNT(*) mycount from emp group by mgr_no) a);
 select distinct e.ename from emp e,incentives i where (select max(salary+incentive_amt) from emp,incentives) >= ANY (select salary from emp e1 where e.deptno=e1.deptno);
-
+select * from emp e where e.Dept_no = (select e1.Dept_no from emp e1 where e1.empno=e.mgr_no);
