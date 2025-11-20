@@ -64,11 +64,7 @@ select customer_name from borrower bo,loan l where bo.loan_no =l.loan_no and l.b
 insert into branch values ('SBI_MantriMarg','Delhi',200000);
 insert into bank_account values (12,'SBI_MantriMarg',2000);
 
-select branch_name from branch whestudent_infoStd_IDre assets > all (select assets from branch where branch_city='Bangalore');
-
 delete from bank_account where branch_name in (select branch_name from branch where branch_city='Bombay');
 
 update bank_account set balance=balance+(0.05*balance);
 select * from bank_account;
-
-drop database insurance;
